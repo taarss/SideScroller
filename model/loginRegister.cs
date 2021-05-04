@@ -17,7 +17,7 @@ namespace SideScroller.model
                     {
                         Username = username,
                         Password = password,
-                        Score = 0
+                        CurrentScore = 0
                     };
                     context.Players.Add(account);
 

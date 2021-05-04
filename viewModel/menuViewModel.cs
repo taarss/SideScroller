@@ -5,6 +5,8 @@ using SideScroller.model;
 using SideScroller.viewModel;
 using SideScroller.commands;
 using System.Collections.ObjectModel;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace SideScroller.viewModel
 {
@@ -21,13 +23,14 @@ namespace SideScroller.viewModel
         public menuViewModel()
         {
             player debugPlayer = new player();
-            debugPlayer.PlayerId = 1;
+            debugPlayer.Id = 1;
             debugPlayer.Username = "test";
-            debugPlayer.Score = 100;
+            debugPlayer.CurrentScore = 100;
             GlobalScores.Add(debugPlayer);
             this.RegisterCommand = new RegisterCommand(this);
             this.LoginCommand = new LoginCommand(this);
             soundPlayer.mainMenu();
+            loadTopGlobalScores();
         }
 
         public player UnregisteredAccount { get => unregisteredAccount; set => unregisteredAccount = value; }
@@ -38,7 +41,13 @@ namespace SideScroller.viewModel
 
         public void loadTopGlobalScores()
         {
+            
+            var context = new SideScrollerDBContext();
 
+            var topGlobalScores = context.Highscores
+                .FromSqlRaw("SELECT * FROM Highscores FULL OUTER JOIN Players ON Highscores.SId").FirstOrDefault();
+                //.FromSqlRaw("SELECT Id, Score, PlayerId FROM Highscores LEFT JOIN Players ON Highscores.PlayerId = Players.Id ORDER BY Highscores.Score DESC").ToList();
+            
         }
     }
 }

@@ -29,6 +29,6 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        <TextBlock TextAlignment="Center" FontSize="30" Text="{Binding Player.Score, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" Height="76" Width="799" Canvas.Top="16"/>
+        <TextBlock TextAlignment="Center" FontSize="30" Text="{Binding Player.CurrentScore, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" Height="76" Width="799" Canvas.Top="16"/>
     </Canvas>
 </UserControl>

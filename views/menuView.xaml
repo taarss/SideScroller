@@ -12,7 +12,7 @@
         <DataTemplate DataType="{x:Type model:player}">
             <StackPanel Orientation = "Horizontal">
                 <TextBlock Text="{Binding Path=Username}" Width="120"></TextBlock>
-                <TextBlock Text="{Binding Path=Score}" Width="50"></TextBlock>
+                <TextBlock Text="{Binding Path=CurrentScore}" Width="50"></TextBlock>
             </StackPanel>
         </DataTemplate>
 
@@ -53,7 +53,7 @@
             <Button Command="{Binding LoginCommand1, Source={StaticResource SharedMenu}}" FontSize="25" Click="Button_Click_1" Canvas.Left="139" Canvas.Top="230" Width="361">Login</Button>
             <Button FontSize="25" Canvas.Left="36" Canvas.Top="344" Width="168" Click="Button_Click_3">Back to menu</Button>
         </Canvas>
-        <Canvas x:Name="scoreCanvas" Background="White">
+        <Canvas Visibility="Hidden" x:Name="scoreCanvas" Background="White">
             <TextBlock FontSize="35" Text="TOP SCORES" Canvas.Left="296" Canvas.Top="46"></TextBlock>
             <Label FontSize="20" Canvas.Left="128" Canvas.Top="62">GLOBAL TOP 50</Label>
             <Label FontSize="20" Canvas.Left="556" Canvas.Top="64">Personal</Label>
