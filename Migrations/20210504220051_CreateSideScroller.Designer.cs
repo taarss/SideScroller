@@ -9,8 +9,8 @@ using SideScroller.model;
 namespace SideScroller.Migrations
 {
     [DbContext(typeof(SideScrollerDBContext))]
-    [Migration("20210504112653_Sidescroller")]
-    partial class Sidescroller
+    [Migration("20210504220051_CreateSideScroller")]
+    partial class CreateSideScroller
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,7 +37,7 @@ namespace SideScroller.Migrations
 
             modelBuilder.Entity("SideScroller.model.highscore", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("SId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -48,25 +48,28 @@ namespace SideScroller.Migrations
                     b.Property<int>("Score")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("SId");
 
                     b.ToTable("Highscores");
                 });
 
             modelBuilder.Entity("SideScroller.model.player", b =>
                 {
-                    b.Property<int>("PlayerId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Password")
+                    b.Property<int>("CurrentScore")
                         .HasColumnType("int");
 
-                    b.Property<int>("Username")
-                        .HasColumnType("int");
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PlayerId");
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Players");
                 });

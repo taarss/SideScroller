@@ -80,7 +80,7 @@ namespace SideScroller.viewModel
         public void moveBlockade()
         {
             int index = 0;
-            Player.Score++;
+            Player.CurrentScore++;
             foreach (activeBlockade element in new List<activeBlockade>(activeBlockades))
             {
                 element.Position.X = element.Position.X - 20;

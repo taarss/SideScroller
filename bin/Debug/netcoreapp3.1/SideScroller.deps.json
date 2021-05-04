@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "SideScroller/1.0.0": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.5",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.5",
           "WpfAnimatedGif": "2.0.0"

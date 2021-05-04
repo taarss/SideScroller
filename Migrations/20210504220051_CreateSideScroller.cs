@@ -2,7 +2,7 @@
 
 namespace SideScroller.Migrations
 {
-    public partial class Sidescroller : Migration
+    public partial class CreateSideScroller : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -23,28 +23,29 @@ namespace SideScroller.Migrations
                 name: "Highscores",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    SId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Score = table.Column<int>(type: "int", nullable: false),
                     PlayerId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Highscores", x => x.Id);
+                    table.PrimaryKey("PK_Highscores", x => x.SId);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Players",
                 columns: table => new
                 {
-                    PlayerId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<int>(type: "int", nullable: false),
-                    Password = table.Column<int>(type: "int", nullable: false)
+                    Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CurrentScore = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Players", x => x.PlayerId);
+                    table.PrimaryKey("PK_Players", x => x.Id);
                 });
         }
 

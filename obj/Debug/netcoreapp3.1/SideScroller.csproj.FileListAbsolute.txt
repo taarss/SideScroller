@@ -118,9 +118,6 @@ C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\App.g.cs
 C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
 C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\SideScroller_MarkupCompile.cache
 C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\SideScroller_MarkupCompile.lref
-C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\App.baml
-C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\MainWindow.baml
-C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\views\gameView.baml
 C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\views\menuView.baml
 C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\SideScroller.g.resources
 C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\SideScroller.AssemblyInfoInputs.cache
@@ -130,3 +127,6 @@ C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\SideScroller.cs
 C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\SideScroller.dll
 C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\SideScroller.pdb
 C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\SideScroller.genruntimeconfig.cache
+C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\views\gameView.baml
