@@ -13,6 +13,8 @@ using System.Windows.Shapes;
 using SideScroller.viewModel;
 using SideScroller;
 using SideScroller.views;
+using System.Windows.Threading;
+using System.Linq;
 
 namespace SideScroller.views
 {
@@ -21,6 +23,7 @@ namespace SideScroller.views
     /// </summary>
     public partial class gameView : UserControl
     {
+
         public gameView()
         {
             InitializeComponent();
@@ -45,8 +48,9 @@ namespace SideScroller.views
                 gameViewModel.PlayerCoordinates.PlayerHitbox = gameViewModel.PlayerCoordinates.CoordinatesY + 220;
             }
 
-
         }
+       
+       
 
     }
 }

@@ -10,27 +10,24 @@
              DataContext="{StaticResource SharedGame}"
              Loaded="UserControl_Loaded">
     <Canvas>
-        <TextBlock Text="{Binding PlayerCoordinates.CoordinatesY, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"></TextBlock>
         <Image wpfanimated:ImageBehavior.AnimatedSource="../images/Desert.gif"
                    wpfanimated:ImageBehavior.RepeatBehavior="1"
                    wpfanimated:ImageBehavior.AnimateInDesignMode="true"
                    wpfanimated:ImageBehavior.AutoStart="True" Margin="-157,-74,-226,-79" Canvas.Left="-153" Canvas.Top="91" Height="433" />
-        <Rectangle  Fill="White" Width="100" Height="50" Canvas.Left="152" Canvas.Top="{Binding PlayerCoordinates.PlayerHitbox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></Rectangle>
-        <Image wpfanimated:ImageBehavior.AnimatedSource="C:\Users\chri45n5\source\repos\SideScroller\images\bird.gif"
+        <Rectangle x:Name="playerHitbox"  Fill="White" Width="100" Height="50" Canvas.Left="152" Canvas.Top="{Binding PlayerCoordinates.PlayerHitbox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></Rectangle>
+        <Image wpfanimated:ImageBehavior.AnimatedSource="C:\Users\chris\Source\Repos\SideScroller\images\bird.gif"
                    wpfanimated:ImageBehavior.RepeatBehavior="1"
                    wpfanimated:ImageBehavior.AnimateInDesignMode="true"
                    wpfanimated:ImageBehavior.AutoStart="True" Margin="-28,92,533,79" Canvas.Left="120" Canvas.Top="{Binding PlayerCoordinates.CoordinatesY, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                <ItemsControl ItemsSource = "{Binding Path = ActiveBlockades, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}">
-                    <ItemsControl.ItemTemplate>
+        <ItemsControl ItemsSource = "{Binding Path = ActiveBlockades, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}">
+            <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Canvas>
-                        <Rectangle VerticalAlignment="Bottom" Canvas.Left="{Binding Position.CoordinatesY}" Height="{Binding Height}"  Width="100" Fill="Red">
-        
-                        </Rectangle>
-                        
+                    <Canvas Height="432" Width="1093">
+                        <Rectangle x:Name="blockade" Canvas.Left="{Binding Position.X, UpdateSourceTrigger=PropertyChanged}"  Canvas.Bottom="0" Height="{Binding Height}"  Width="30" Fill="{Binding Texture}"/>
                     </Canvas>
                 </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <TextBlock TextAlignment="Center" FontSize="30" Text="{Binding Player.Score, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" Height="76" Width="799" Canvas.Top="16"/>
     </Canvas>
 </UserControl>

@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chri45n5\\source\\repos\\SideScroller\\SideScroller.csproj": {}
+    "C:\\Users\\chris\\Source\\Repos\\SideScroller\\SideScroller.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chri45n5\\source\\repos\\SideScroller\\SideScroller.csproj": {
+    "C:\\Users\\chris\\Source\\Repos\\SideScroller\\SideScroller.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chri45n5\\source\\repos\\SideScroller\\SideScroller.csproj",
+        "projectUniqueName": "C:\\Users\\chris\\Source\\Repos\\SideScroller\\SideScroller.csproj",
         "projectName": "SideScroller",
-        "projectPath": "C:\\Users\\chri45n5\\source\\repos\\SideScroller\\SideScroller.csproj",
-        "packagesPath": "C:\\Users\\chri45n5\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chri45n5\\source\\repos\\SideScroller\\obj\\",
+        "projectPath": "C:\\Users\\chris\\Source\\Repos\\SideScroller\\SideScroller.csproj",
+        "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\chris\\Source\\Repos\\SideScroller\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\chri45n5\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

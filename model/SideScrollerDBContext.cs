@@ -13,7 +13,7 @@ namespace SideScroller.model
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@$"Server={Environment.MachineName};Database=Sidescroller;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@$"Server=DESKTOP-QLHFP0U;Database=Sidescroller;Trusted_Connection=True;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
