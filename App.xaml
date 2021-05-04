@@ -3,8 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SideScroller"
              xmlns:ViewModel="clr-namespace:SideScroller.viewModel"
+             xmlns:Model="clr-namespace:SideScroller.model"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ViewModel:gameViewModel x:Key="SharedGame"/>
+        <ViewModel:menuViewModel x:Key="SharedMenu"/>
+        <Model:soundPlayer x:Key="SharedMusicPlayer"/>
     </Application.Resources>
 </Application>

@@ -14,7 +14,7 @@
                    wpfanimated:ImageBehavior.RepeatBehavior="1"
                    wpfanimated:ImageBehavior.AnimateInDesignMode="true"
                    wpfanimated:ImageBehavior.AutoStart="True" Margin="-157,-74,-226,-79" Canvas.Left="-153" Canvas.Top="91" Height="433" />
-        <Rectangle x:Name="playerHitbox"  Fill="White" Width="100" Height="50" Canvas.Left="152" Canvas.Top="{Binding PlayerCoordinates.PlayerHitbox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></Rectangle>
+        <Rectangle x:Name="playerHitbox" Width="100" Height="50" Canvas.Left="152" Canvas.Top="{Binding PlayerCoordinates.PlayerHitbox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></Rectangle>
         <Image wpfanimated:ImageBehavior.AnimatedSource="C:\Users\chris\Source\Repos\SideScroller\images\bird.gif"
                    wpfanimated:ImageBehavior.RepeatBehavior="1"
                    wpfanimated:ImageBehavior.AnimateInDesignMode="true"
@@ -23,7 +23,8 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Canvas Height="432" Width="1093">
-                        <Rectangle x:Name="blockade" Canvas.Left="{Binding Position.X, UpdateSourceTrigger=PropertyChanged}"  Canvas.Bottom="0" Height="{Binding Height}"  Width="30" Fill="{Binding Texture}"/>
+                        <Rectangle x:Name="blockade" Canvas.Left="{Binding Position.X, UpdateSourceTrigger=PropertyChanged}"  Canvas.Bottom="0" Height="{Binding Height}"  Width="30" />
+                        <Image Stretch="Fill" Source="{Binding Texture}" Canvas.Left="{Binding Position.X, UpdateSourceTrigger=PropertyChanged}"  Canvas.Bottom="0" Height="{Binding Height}"  Width="80"></Image>
                     </Canvas>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
