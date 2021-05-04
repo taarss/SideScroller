@@ -6,7 +6,19 @@
              xmlns:local="clr-namespace:SideScroller.views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-          
+    <Grid x:Name="menu" Background="White">
+        <Canvas>
+            <Button Width="176" Content="Start Game" Canvas.Left="310" Canvas.Top="122" Click="Button_Click"/>
+            <Button Width="176" Content="Login" Canvas.Left="310" Canvas.Top="152" />
+            <Button Width="176" Content="Register" Canvas.Left="310" Canvas.Top="182" />
+        </Canvas>   
+        <Canvas x:Name="registerCanvas" Background="White">
+            <TextBlock FontSize="30" TextAlignment="Center" Width="799" Height="50" Canvas.Left="-1" Canvas.Top="32">Register</TextBlock>
+            <TextBox FontSize="25" Width="210" Canvas.Left="288" Canvas.Top="91"></TextBox>
+            <TextBlock FontSize="25" Width="129" Canvas.Left="138" Canvas.Top="91">Username</TextBlock>
+            <PasswordBox FontSize="25" Width="210" Canvas.Left="288" Canvas.Top="151"></PasswordBox>
+            <TextBlock FontSize="25" Width="141" Canvas.Left="138" Canvas.Top="151">Password</TextBlock>
+            <Button FontSize="25">Register</Button>
+        </Canvas>
     </Grid>
 </UserControl>

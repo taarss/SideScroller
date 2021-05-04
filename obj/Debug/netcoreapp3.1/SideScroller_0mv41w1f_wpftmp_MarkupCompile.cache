@@ -1,20 +1,20 @@
-﻿SideScroller
+﻿SideScroller_0mv41w1f_wpftmp
 
 
 winexe
 C#
 .cs
 C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\
-SideScroller
+SideScroller_0mv41w1f_wpftmp
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\chris\Source\Repos\SideScroller\App.xaml
 3-1193348108
 
-18-689092318
-214736449113
+21-567740159
+4281472898226
 MainWindow.xaml;views\gameView.xaml;views\menuView.xaml;
 
-False
+True
 

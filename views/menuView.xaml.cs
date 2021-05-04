@@ -24,5 +24,12 @@ namespace SideScroller.views
             InitializeComponent();
             
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            menu.Visibility = System.Windows.Visibility.Hidden;
+            gameViewModel gameViewModel = (gameViewModel)App.Current.Resources["SharedGame"];
+            gameViewModel.StartGame();
+        }
     }
 }

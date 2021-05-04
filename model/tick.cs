@@ -28,6 +28,7 @@ namespace SideScroller.model
         {
             gameViewModel gameViewModel = (gameViewModel)App.Current.Resources["SharedGame"];
             gameViewModel.Gravity();
+            gameViewModel.moveBlockade();
         }
     }
 }
