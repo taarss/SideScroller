@@ -24,12 +24,36 @@ namespace SideScroller.views
             InitializeComponent();
             
         }
-
+        //Starts game
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             menu.Visibility = System.Windows.Visibility.Hidden;
             gameViewModel gameViewModel = (gameViewModel)App.Current.Resources["SharedGame"];
             gameViewModel.StartGame();
+        }
+
+        //Complete registration
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            registerCanvas.Visibility = Visibility.Hidden;
+        }
+
+        //Open registration menu
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            registerCanvas.Visibility = Visibility.Visible;
+        }
+
+        //Back to main menu
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            registerCanvas.Visibility = Visibility.Hidden;
+            loginCanvas.Visibility = Visibility.Hidden;
+        }
+        //Open login menu
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            loginCanvas.Visibility = Visibility.Visible;
         }
     }
 }

@@ -8,6 +8,8 @@ namespace SideScroller.viewModel
 {
     public class gameViewModel
     {
+        private bool isLoggedIn = false;
+        private soundPlayer soundPlayer = (soundPlayer)App.Current.Resources["SharedMusicPlayer"];
         private player player = new player();
         private tick tick = new tick();
         private playerEntity playerCoordinates = new playerEntity();
@@ -17,8 +19,8 @@ namespace SideScroller.viewModel
 
         public gameViewModel()
         {      
+            
             PlayerCoordinates.CoordinatesY = 200;
-            //tick.StartGame();
             loadBlockades();
         }
 
@@ -27,10 +29,13 @@ namespace SideScroller.viewModel
         public ObservableCollection<blockcades> BlockadesType { get => blockadesType; set => blockadesType = value; }
         public ObservableCollection<activeBlockade> ActiveBlockades { get => activeBlockades; set => activeBlockades = value; }
         public player Player { get => player; set => player = value; }
+        public bool IsLoggedIn { get => isLoggedIn; set => isLoggedIn = value; }
 
         public void StartGame()
         {
             tick.StartGame();
+            soundPlayer.stop();
+            soundPlayer.gameplay();
         }
 
         public void Gravity()

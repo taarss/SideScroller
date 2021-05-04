@@ -4,21 +4,63 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SideScroller.views"
+             xmlns:model="clr-namespace:SideScroller.model"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="{StaticResource SharedMenu}">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type model:player}">
+            <StackPanel Orientation = "Horizontal">
+                <TextBlock Text="{Binding Path=Username}" Width="120"></TextBlock>
+                <TextBlock Text="{Binding Path=Score}" Width="50"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+
+    </UserControl.Resources>
     <Grid x:Name="menu" Background="White">
         <Canvas>
+            <Label FontSize="50" Canvas.Left="269" Canvas.Top="27">Flappy birb</Label>
             <Button Width="176" Content="Start Game" Canvas.Left="310" Canvas.Top="122" Click="Button_Click"/>
-            <Button Width="176" Content="Login" Canvas.Left="310" Canvas.Top="152" />
-            <Button Width="176" Content="Register" Canvas.Left="310" Canvas.Top="182" />
-        </Canvas>   
-        <Canvas x:Name="registerCanvas" Background="White">
+            <Button Width="176" Content="Login" Canvas.Left="310" Canvas.Top="152" Click="Button_Click_4" />
+            <Button Width="176" Content="Register" Canvas.Left="310" Canvas.Top="182" Click="Button_Click_2" />
+            <Button Width="176" Content="Top scores" Canvas.Left="310" Canvas.Top="212" Click="Button_Click_2" />
+            <Image Source="../images/birb.png" Height="326" Canvas.Top="126" Width="359" RenderTransformOrigin="0.5,0.5" Canvas.Left="-51">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-34.648"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Canvas>
+        <Canvas x:Name="registerCanvas" Background="White" Visibility="Hidden">
             <TextBlock FontSize="30" TextAlignment="Center" Width="799" Height="50" Canvas.Left="-1" Canvas.Top="32">Register</TextBlock>
-            <TextBox FontSize="25" Width="210" Canvas.Left="288" Canvas.Top="91"></TextBox>
+            <TextBox Text="{Binding UnregisteredAccount.Username, Mode=TwoWay}" FontSize="25" Width="210" Canvas.Left="288" Canvas.Top="91"></TextBox>
             <TextBlock FontSize="25" Width="129" Canvas.Left="138" Canvas.Top="91">Username</TextBlock>
-            <PasswordBox FontSize="25" Width="210" Canvas.Left="288" Canvas.Top="151"></PasswordBox>
+            <TextBox Text="{Binding UnregisteredAccount.Password, Mode=TwoWay}" FontSize="25" Width="210" Canvas.Left="288" Canvas.Top="151"></TextBox>
             <TextBlock FontSize="25" Width="141" Canvas.Left="138" Canvas.Top="151">Password</TextBlock>
-            <Button FontSize="25">Register</Button>
+            <Button Command="{Binding RegisterCommand1, Source={StaticResource SharedMenu}}" FontSize="25" Click="Button_Click_1" Canvas.Left="139" Canvas.Top="230" Width="361">Register</Button>
+            <Button FontSize="25" Canvas.Left="36" Canvas.Top="344" Width="168" Click="Button_Click_3">Back to menu</Button>
+        </Canvas>
+        <Canvas Visibility="Hidden" x:Name="loginCanvas" Background="White">
+            <TextBlock FontSize="30" TextAlignment="Center" Width="799" Height="50" Canvas.Left="-1" Canvas.Top="32">Login</TextBlock>
+            <TextBox Text="{Binding UnregisteredAccount.Username, Mode=TwoWay}" FontSize="25" Width="210" Canvas.Left="288" Canvas.Top="91"></TextBox>
+            <TextBlock FontSize="25" Width="129" Canvas.Left="138" Canvas.Top="91">Username</TextBlock>
+            <TextBox Text="{Binding UnregisteredAccount.Password, Mode=TwoWay}" FontSize="25" Width="210" Canvas.Left="288" Canvas.Top="151"></TextBox>
+            <TextBlock FontSize="25" Width="141" Canvas.Left="138" Canvas.Top="151">Password</TextBlock>
+            <Button Command="{Binding LoginCommand1, Source={StaticResource SharedMenu}}" FontSize="25" Click="Button_Click_1" Canvas.Left="139" Canvas.Top="230" Width="361">Login</Button>
+            <Button FontSize="25" Canvas.Left="36" Canvas.Top="344" Width="168" Click="Button_Click_3">Back to menu</Button>
+        </Canvas>
+        <Canvas x:Name="scoreCanvas" Background="White">
+            <TextBlock FontSize="35" Text="TOP SCORES" Canvas.Left="296" Canvas.Top="46"></TextBlock>
+            <Label FontSize="20" Canvas.Left="128" Canvas.Top="62">GLOBAL TOP 50</Label>
+            <Label FontSize="20" Canvas.Left="556" Canvas.Top="64">Personal</Label>
+            <ListBox ItemsSource = "{Binding GlobalScores}" Height="250" Width="200" Canvas.Left="95" Canvas.Top="95"/>
+            <ListBox ItemsSource = "{Binding PersonalScores}" Height="250" Width="200" Canvas.Left="495" Canvas.Top="95"/>
+
+            <Button FontSize="25" Canvas.Left="31" Canvas.Top="352" Width="168" Click="Button_Click_3">Back to menu</Button>
         </Canvas>
     </Grid>
 </UserControl>
