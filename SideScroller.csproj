@@ -7,12 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\bird.gif" />
+    <None Remove="images\cactus.png" />
     <None Remove="images\Desert.gif" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="commands\" />
     <Folder Include="sounds\" />
-    <Folder Include="viewModel\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +27,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="images\bird.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\cactus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="images\Desert.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

@@ -10,6 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SideScroller.viewModel;
+using SideScroller;
+using SideScroller.views;
 
 namespace SideScroller.views
 {
@@ -22,5 +25,28 @@ namespace SideScroller.views
         {
             InitializeComponent();
         }
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            var window = Window.GetWindow(this);
+            window.KeyDown += HandleKeyPress;
+        }
+
+        private void HandleKeyPress(object sender, KeyEventArgs e)
+        {
+            gameViewModel gameViewModel = (gameViewModel)App.Current.Resources["SharedGame"];
+            if(e.Key == Key.Down)
+            {
+                gameViewModel.PlayerCoordinates.CoordinatesY = gameViewModel.PlayerCoordinates.CoordinatesY + 20;
+                gameViewModel.PlayerCoordinates.PlayerHitbox = gameViewModel.PlayerCoordinates.CoordinatesY + 220;
+            }
+            if(e.Key == Key.Up)
+            {
+                gameViewModel.PlayerCoordinates.CoordinatesY = gameViewModel.PlayerCoordinates.CoordinatesY - 20;
+                gameViewModel.PlayerCoordinates.PlayerHitbox = gameViewModel.PlayerCoordinates.CoordinatesY + 220;
+            }
+
+
+        }
+
     }
 }

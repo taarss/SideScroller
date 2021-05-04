@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SideScroller.viewModel;
 
 namespace SideScroller.views
 {
@@ -21,6 +22,7 @@ namespace SideScroller.views
         public menuView()
         {
             InitializeComponent();
+            
         }
     }
 }

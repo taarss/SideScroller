@@ -23,7 +23,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="13*"/>
         </Grid.RowDefinitions>
-        <views:gameView Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" x:Name="GameViewControl"></views:gameView>
+        <views:gameView Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"></views:gameView>
         <Rectangle Fill="White"></Rectangle>
     <Button Command="{Binding WindowCommand}" Grid.Column="1" Grid.Row="0" Background="PaleVioletRed" Foreground="White" BorderBrush="Transparent" BorderThickness="0" Content="X"/>
     </Grid>
