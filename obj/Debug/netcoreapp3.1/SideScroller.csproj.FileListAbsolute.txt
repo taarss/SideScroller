@@ -1,4 +1,3 @@
-C:\Users\chri45n5\source\repos\SideScroller\obj\Debug\netcoreapp3.1\SideScroller.csprojAssemblyReference.cache
 C:\Users\chri45n5\source\repos\SideScroller\obj\Debug\netcoreapp3.1\MainWindow.g.cs
 C:\Users\chri45n5\source\repos\SideScroller\obj\Debug\netcoreapp3.1\views\gameView.g.cs
 C:\Users\chri45n5\source\repos\SideScroller\obj\Debug\netcoreapp3.1\views\menuView.g.cs
@@ -64,3 +63,4 @@ C:\Users\chri45n5\source\repos\SideScroller\obj\Debug\netcoreapp3.1\SideScroller
 C:\Users\chri45n5\source\repos\SideScroller\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
 C:\Users\chri45n5\source\repos\SideScroller\obj\Debug\netcoreapp3.1\App.baml
 C:\Users\chri45n5\source\repos\SideScroller\bin\Debug\netcoreapp3.1\WpfAnimatedGif.dll
+C:\Users\chri45n5\source\repos\SideScroller\obj\Debug\netcoreapp3.1\SideScroller.csprojAssemblyReference.cache

@@ -2,8 +2,9 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SideScroller"
+             xmlns:ViewModel="clr-namespace:SideScroller.viewModel"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <local:MainWindow x:Key="SharedMainWindow"/>
+        <ViewModel:gameViewModel x:Key="SharedGame"/>
     </Application.Resources>
 </Application>

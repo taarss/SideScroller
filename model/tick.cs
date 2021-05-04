@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SideScroller.viewModel;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Threading;
@@ -15,7 +16,7 @@ namespace SideScroller.model
 
         public void StartGame()
         {
-            timer.Interval = TimeSpan.FromMilliseconds(20);
+            timer.Interval = TimeSpan.FromMilliseconds(75);
             timer.Tick += Timer_Tick;
             timer.Start();
         }
@@ -25,7 +26,8 @@ namespace SideScroller.model
         }
         public void Timer_Tick(object sender, EventArgs args)
         {
-            
+            gameViewModel gameViewModel = (gameViewModel)App.Current.Resources["SharedGame"];
+            gameViewModel.Gravity();
         }
     }
 }

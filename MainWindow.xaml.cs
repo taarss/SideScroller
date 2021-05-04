@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SideScroller.commands;
+using SideScroller.viewModel;
 
 namespace SideScroller
 {
@@ -21,13 +21,11 @@ namespace SideScroller
     /// </summary>
     public partial class MainWindow : Window
     {
-        private windowCommand windowCommand;
         public MainWindow()
         {
             InitializeComponent();
-            this.windowCommand = new windowCommand();
         }
+        
 
-        public windowCommand WindowCommand { get => windowCommand; set => windowCommand = value; }
     }
 }
