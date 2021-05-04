@@ -12,7 +12,7 @@ namespace SideScroller.model
 
         public blockcades()
         {
-            
+
         }
 
         [Key]

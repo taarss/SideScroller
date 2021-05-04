@@ -20,5 +20,17 @@
                    wpfanimated:ImageBehavior.RepeatBehavior="1"
                    wpfanimated:ImageBehavior.AnimateInDesignMode="true"
                    wpfanimated:ImageBehavior.AutoStart="True" Margin="-28,92,533,79" Canvas.Left="120" Canvas.Top="{Binding PlayerCoordinates.CoordinatesY, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <ItemsControl ItemsSource = "{Binding Path = ActiveBlockades, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}">
+                    <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Canvas>
+                        <Rectangle VerticalAlignment="Bottom" Canvas.Left="{Binding Position.CoordinatesY}" Height="{Binding Height}"  Width="100" Fill="Red">
+        
+                        </Rectangle>
+                        
+                    </Canvas>
+                </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
     </Canvas>
 </UserControl>
