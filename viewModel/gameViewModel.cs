@@ -100,7 +100,28 @@ namespace SideScroller.viewModel
                 if(element.Position.X <= 252 && element.Position.X >= 152 && element.Height <= +playerCoordinates.PlayerHitbox)
                 {
                     tick.GameOver();
+                    addNewScore();
                 }
+            }
+        }
+        public void addNewScore()
+        {
+            if (isLoggedIn)
+            {
+                using (var context = new SideScrollerDBContext())
+                {
+                    var newScore = new highscore()
+                    {
+                        Score = player.CurrentScore,
+                        PlayerId = player.Id
+                    
+                    };
+                    context.Highscores.Add(newScore);
+
+
+                    context.SaveChanges();
+                }
+
             }
         }
     }

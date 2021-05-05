@@ -10,12 +10,12 @@ namespace SideScroller.model
 
         public void mainMenu()
         {
-            player = new System.Media.SoundPlayer("C:/Users/chris/Source/Repos/SideScroller/sounds/main.wav");
+            player = new System.Media.SoundPlayer("C:/Users/chri45n5/Source/Repos/SideScrollerGame/sounds/main.wav");
             player.PlayLooping();
         }
         public void gameplay()
         {
-            player = new System.Media.SoundPlayer("C:/Users/chris/Source/Repos/SideScroller/sounds/gameplay.wav");
+            player = new System.Media.SoundPlayer("C:/Users/chri45n5/Source/Repos/SideScrollerGame/sounds/gameplay.wav");
             player.PlayLooping();
         }
         public void stop()

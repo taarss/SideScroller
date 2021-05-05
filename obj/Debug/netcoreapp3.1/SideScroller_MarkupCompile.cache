@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\chris\Source\Repos\SideScroller\obj\Debug\netcoreapp3.1\
+C:\Users\chri45n5\Source\Repos\SideScrollerGame\obj\Debug\netcoreapp3.1\
 SideScroller
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\chris\Source\Repos\SideScroller\App.xaml
+C:\Users\chri45n5\Source\Repos\SideScrollerGame\App.xaml
 3-1193348108
 
-221870661603
-214736449113
+22-1658512504
+214-435306535
 MainWindow.xaml;views\gameView.xaml;views\menuView.xaml;
 
 False

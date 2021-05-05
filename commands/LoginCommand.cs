@@ -34,6 +34,7 @@ namespace SideScroller.commands
                     .Where(s => s.Username == menuViewModel.UnregisteredAccount.Username);
                 gameViewModel.Player = account.First();
                 gameViewModel.IsLoggedIn = true;
+                menuViewModel.Player.Username = account.First().Username;
             }
         }
 

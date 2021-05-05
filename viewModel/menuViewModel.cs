@@ -12,6 +12,7 @@ namespace SideScroller.viewModel
 {
     public class menuViewModel
     {
+        private player player = new player();
         private ObservableCollection<player> globalScores = new ObservableCollection<player>();
         private ObservableCollection<player> personalScores = new ObservableCollection<player>();
         private player unregisteredAccount = new player();
@@ -22,15 +23,10 @@ namespace SideScroller.viewModel
 
         public menuViewModel()
         {
-            player debugPlayer = new player();
-            debugPlayer.Id = 1;
-            debugPlayer.Username = "test";
-            debugPlayer.CurrentScore = 100;
-            GlobalScores.Add(debugPlayer);
             this.RegisterCommand = new RegisterCommand(this);
             this.LoginCommand = new LoginCommand(this);
             soundPlayer.mainMenu();
-            loadTopGlobalScores();
+            
         }
 
         public player UnregisteredAccount { get => unregisteredAccount; set => unregisteredAccount = value; }
@@ -38,16 +34,47 @@ namespace SideScroller.viewModel
         public LoginCommand LoginCommand1 { get => LoginCommand; set => LoginCommand = value; }
         public ObservableCollection<player> GlobalScores { get => globalScores; set => globalScores = value; }
         public ObservableCollection<player> PersonalScores { get => personalScores; set => personalScores = value; }
+        public player Player { get => player; set => player = value; }
 
+     
         public void loadTopGlobalScores()
         {
-            
-            var context = new SideScrollerDBContext();
+            if(GlobalScores.Count == 0)
+            {
+                var context = new SideScrollerDBContext();
+                var topGlobalScores = context.Highscores
+                    .FromSqlRaw("SELECT TOP 50 * FROM Highscores ORDER BY Score DESC").ToList();
+                foreach (var element in topGlobalScores)
+                {   
+                    var topGlobalPlayers = context.Players
+                     .Where(p => p.Id == element.PlayerId).FirstOrDefault();
+                    player scoreEntry = new player();
+                    scoreEntry.CurrentScore = element.Score;
+                    scoreEntry.Username = topGlobalPlayers.Username;
+                    GlobalScores.Add(scoreEntry);
 
-            var topGlobalScores = context.Highscores
-                .FromSqlRaw("SELECT * FROM Highscores FULL OUTER JOIN Players ON Highscores.SId").FirstOrDefault();
+                }
                 //.FromSqlRaw("SELECT Id, Score, PlayerId FROM Highscores LEFT JOIN Players ON Highscores.PlayerId = Players.Id ORDER BY Highscores.Score DESC").ToList();
-            
+            }
+
+        }
+        public void loadAllPersonalScores()
+        {
+            if(PersonalScores.Count == 0)
+            {
+                var context = new SideScrollerDBContext();
+                gameViewModel gameViewModel = (gameViewModel)App.Current.Resources["SharedGame"];
+                var topPersonallScores = context.Highscores
+                    .Where(h => h.PlayerId == gameViewModel.Player.Id).OrderByDescending(s => s.Score).ToList();
+                foreach (var element in topPersonallScores)
+                {
+                    player scoreEntry = new player();
+                    scoreEntry.CurrentScore = element.Score;
+                    scoreEntry.Username = gameViewModel.Player.Username;
+                    PersonalScores.Add(scoreEntry);
+
+                }
+            }
         }
     }
 }

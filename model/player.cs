@@ -13,7 +13,14 @@ namespace SideScroller.model
         private int currentScore;
 
         public int Id { get => id; set => id = value; }
-        public string Username { get => username; set => username = value; }
+        public string Username { get => username; set { 
+                if(username != value)
+                {
+                    username = value;
+                    RaisePropertyChanged("Username");
+                }
+            } 
+        }
         public string Password { get => password; set => password = value; }
         public int CurrentScore { get => currentScore; set { 
                 if(currentScore != value)

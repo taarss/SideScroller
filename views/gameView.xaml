@@ -15,7 +15,7 @@
                    wpfanimated:ImageBehavior.AnimateInDesignMode="true"
                    wpfanimated:ImageBehavior.AutoStart="True" Margin="-157,-74,-226,-79" Canvas.Left="-153" Canvas.Top="91" Height="433" />
         <Rectangle x:Name="playerHitbox" Width="100" Height="50" Canvas.Left="152" Canvas.Top="{Binding PlayerCoordinates.PlayerHitbox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></Rectangle>
-        <Image wpfanimated:ImageBehavior.AnimatedSource="C:\Users\chris\Source\Repos\SideScroller\images\bird.gif"
+        <Image wpfanimated:ImageBehavior.AnimatedSource="C:\Users\chri45n5\Source\Repos\SideScrollerGame\images\bird.gif"
                    wpfanimated:ImageBehavior.RepeatBehavior="1"
                    wpfanimated:ImageBehavior.AnimateInDesignMode="true"
                    wpfanimated:ImageBehavior.AutoStart="True" Margin="-28,92,533,79" Canvas.Left="120" Canvas.Top="{Binding PlayerCoordinates.CoordinatesY, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />

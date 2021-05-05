@@ -49,11 +49,20 @@ namespace SideScroller.views
         {
             registerCanvas.Visibility = Visibility.Hidden;
             loginCanvas.Visibility = Visibility.Hidden;
+            scoreCanvas.Visibility = Visibility.Hidden;
         }
         //Open login menu
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             loginCanvas.Visibility = Visibility.Visible;
+        }
+        //Opens Score menu
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            scoreCanvas.Visibility = Visibility.Visible;
+            menuViewModel menuViewModel = (menuViewModel)App.Current.Resources["SharedMenu"];
+            menuViewModel.loadTopGlobalScores();
+            menuViewModel.loadAllPersonalScores();
         }
     }
 }
